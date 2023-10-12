@@ -20,7 +20,7 @@ slots:
   # UNIXソケットの共有(recv)
   slot-ipc-dir-testsnap-d:
     interface: content
-    content: socket-directory
+    content: socket-directoryD
     write: 
       - $SNAP_DATA/export
 
@@ -28,7 +28,7 @@ plugs:
   # UNIXソケットの共有(send)
   plug-ipc-dir-testsnap-d:
     interface: content
-    content: socket-directory
+    content: socket-directoryC
     target: $SNAP_DATA/import
 
 
