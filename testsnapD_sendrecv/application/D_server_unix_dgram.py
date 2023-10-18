@@ -6,8 +6,8 @@ import socket
 
 
 def srv_sock_file():
-    #socket_path = '/var/snap/testsnap-d-sendrecv/current/export/unix_socket_recvD'
-    socket_path = '/home/masahiro/socktest/unix_socket_recvD'
+    socket_path = '/var/snap/testsnap-d-sendrecv/current/export/unix_socket_recvD'
+    #socket_path = '/home/masahiro/socktest/unix_socket_recvD'
     
     datasize = 1024
 
