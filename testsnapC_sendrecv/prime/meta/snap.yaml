@@ -1,0 +1,35 @@
+name: testsnap-c-sendrecv
+version: 0.0.1
+summary: snap-to-snap IPC testing. send and recv.
+description: |
+  snap-to-snap IPC testing. send and recv.
+architectures:
+- amd64
+base: core22
+apps:
+  send:
+    command: C_client_unix_dgram.py
+    plugs:
+    - network
+    - plug-ipc-dir-testsnap-c
+  recv:
+    command: C_server_unix_dgram.py
+    plugs:
+    - network
+    - network-bind
+confinement: strict
+grade: stable
+environment:
+  LD_LIBRARY_PATH: ${SNAP_LIBRARY_PATH}${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+  PATH: $SNAP/usr/sbin:$SNAP/usr/bin:$SNAP/sbin:$SNAP/bin:$PATH
+plugs:
+  plug-ipc-dir-testsnap-c:
+    content: socket-directory-A
+    interface: content
+    target: $SNAP_DATA/import
+slots:
+  slot-ipc-dir-testsnap-c:
+    interface: content
+    content: socket-directory-B
+    write:
+    - $SNAP_DATA/export

@@ -6,11 +6,12 @@ import socket
 
 
 def srv_sock_file():
-    socket_path = '/var/snap/testsnap-c-sendrecv/current/export/unix_socket_recvC'
+    socket_path = '/var/snap/testsnap-d-sendrecv/current/export/unix_socket_recvD'
+    
     datasize = 1024
 
     print("socket_path:{}".format(socket_path), flush=True)
-#create a folder where socket will be created
+    #make sure the directory exists
     os.makedirs(os.path.dirname(socket_path), exist_ok=True)
     if os.path.exists(socket_path):
         os.remove(socket_path)

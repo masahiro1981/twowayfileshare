@@ -45,8 +45,8 @@ apps:
     plugs:
       - network
       - network-bind
-    slots:
-     - slot-ipc-dir-testsnap-d
+#    slots:
+#     - slot-ipc-dir-testsnap-d
 
 # パッケージに取り込むパーツの設定
 parts:

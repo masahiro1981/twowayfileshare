@@ -11,7 +11,7 @@ def srv_sock_file():
 
     print("socket_path:{}".format(socket_path), flush=True)
 #create a folder where socket will be created
-    os.makedirs(os.path.dirname(socket_path), exist_ok=True)
+    os.makedirs(os.path.dirname(socket_path), exist_ok=False)
     if os.path.exists(socket_path):
         os.remove(socket_path)
 
