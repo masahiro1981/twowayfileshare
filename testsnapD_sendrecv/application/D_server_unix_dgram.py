@@ -11,7 +11,8 @@ def srv_sock_file():
     datasize = 1024
 
     print("socket_path:{}".format(socket_path), flush=True)
-
+    #make sure the directory exists
+    os.makedirs(os.path.dirname(socket_path), exist_ok=True)
     if os.path.exists(socket_path):
         os.remove(socket_path)
 
